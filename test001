@@ -49,3 +49,23 @@ Sourcetree&Git部分名称解释
 版权声明：本文为博主原创文章，转载请附上博文链接！
 
 Nov28
+==========================
+Sourcetree的安装及使用
+(1)点击安装程序进入安装界面，选择安装目录后，点击下一步，进入下个页面然后点击安装
+
+(2)安装完成后，打开sourcetree，如图选择使用已存在账号或者去Atlassian官网注册新的账号。
+
+下面提供跳过验证的方法：
+
+安装之后，进入用户本地文件夹下的SourceTree目录，若目录不存在则新建
+
+%LocalAppData%\Atlassian\SourceTree\
+在SourceTree目录下新建accounts.json文件
+
+%LocalAppData%\Atlassian\SourceTree\accounts.json
+--------------------- 
+作者：OPS运动狂-JoyWang 
+来源：CSDN 
+原文：https://blog.csdn.net/wjy1990831/article/details/80417820 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
