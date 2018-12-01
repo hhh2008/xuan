@@ -1,4 +1,4 @@
-abcd
+1234
 bcde
 cdef
 
@@ -12,3 +12,61 @@ http://www.runoob.com/w3cnote/git-gui-window.html
 
 Git可视化极简易教程 — Git GUI使用方法
 
+=====
+
+Sourcetree&Git部分名称解释
+克隆(clone)：从远程仓库URL加载创建一个与远程仓库一样的本地仓库
+
+提交(commit)：将暂存文件上传到本地仓库（我们在Finder中对本地仓库做修改后一般都得先提交一次，再推送）
+
+检出(checkout)：切换不同分支
+
+添加(add）：添加文件到缓存区
+
+移除(remove）：移除文件至缓存区
+
+贮藏(git stash)：保存工作现场
+
+重置(reset)：回到最近添加(add)/提交(commit)状态
+
+合并(merge)：将多个同名文件合并为一个文件，该文件包含多个同名文件的所有内容，相同内容抵消
+
+抓取(fetch)：从远程仓库获取信息并同步至本地仓库
+
+拉取(pull)：从远程仓库获取信息并同步至本地仓库，并且自动执行合并（merge）操作，即 pull=fetch+merge
+
+推送(push)：将本地仓库同步至远程仓库，一般推送（push）前先拉取（pull）一次，确保一致
+
+分支(branch)：创建/修改/删除分枝
+
+标签(tag)：给项目增添标签
+
+工作流(Git Flow): 团队工作时，每个人创建属于自己的分枝（branch），确定无误后提交到master分枝
+--------------------- 
+作者：OPS运动狂-JoyWang 
+来源：CSDN 
+原文：https://blog.csdn.net/wjy1990831/article/details/80417820 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+Nov28
+==========================
+Sourcetree的安装及使用
+(1)点击安装程序进入安装界面，选择安装目录后，点击下一步，进入下个页面然后点击安装
+
+(2)安装完成后，打开sourcetree，如图选择使用已存在账号或者去Atlassian官网注册新的账号。
+
+下面提供跳过验证的方法：
+
+安装之后，进入用户本地文件夹下的SourceTree目录，若目录不存在则新建
+
+%LocalAppData%\Atlassian\SourceTree\
+在SourceTree目录下新建accounts.json文件
+
+%LocalAppData%\Atlassian\SourceTree\accounts.json
+--------------------- 
+作者：OPS运动狂-JoyWang 
+来源：CSDN 
+原文：https://blog.csdn.net/wjy1990831/article/details/80417820 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+https://github.com/hhh2008/xuan
