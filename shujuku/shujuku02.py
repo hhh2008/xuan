@@ -4,7 +4,7 @@
 import pymysql
 
 # 打开数据库连接
-db = pymysql.connect("localhost", "testuser", "test123", "TESTDB", charset='utf8' )
+db = pymysql.connect("localhost", "tracert1", "tracert1", "tracert", charset='utf8' )
 
 # 使用cursor()方法获取操作游标 
 cursor = db.cursor()

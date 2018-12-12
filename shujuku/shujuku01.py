@@ -3,7 +3,7 @@
 import pymysql
  
 # 打开数据库连接
-db = pymysql.connect("localhost","root","root","TESTDB" )
+db = pymysql.connect("localhost","tracert1","tracert1","tracert" )
  
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
@@ -36,7 +36,7 @@ except:
    # Rollback in case there is any error
    db.rollback()
 
-cursor.execute(sql)
+# cursor.execute(sql)
  
 # 关闭数据库连接
 db.close()
