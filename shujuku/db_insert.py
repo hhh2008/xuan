@@ -1,7 +1,8 @@
 #!/usr/bin/python3
  
 import pymysql
- 
+import time
+
 # 打开数据库连接
 db = pymysql.connect("localhost","tracert1","tracert1","tracert" )
  
@@ -16,17 +17,17 @@ data = cursor.fetchone()
  
 print ("Database version : %s " % data)
 
-sql = """CREATE TABLE EMPLOYEE1 (
-         FIRST_NAME  CHAR(20) NOT NULL,
-         LAST_NAME  CHAR(20),
-         AGE INT,  
-         SEX CHAR(1),
-         INCOME FLOAT )"""
-
+hhh = 'Hello world!'
+#time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) 
 # SQL 插入语句
-sql_b = """INSERT INTO EMPLOYEE1(FIRST_NAME,
-         LAST_NAME, AGE, SEX, INCOME)
-         VALUES ('Mac', 'Mohan', 22, 'M', 3000)"""
+sql = """INSERT INTO LOGS_TRACERT(IP_ADRESS,
+         STATUS, CONTENT, DATE_TIME,DB_NAME)
+         VALUES ("""
+sql = sql + "'172..26..79..249',"
+sql = sql + "'F',"
+sql = sql + "'"+ hhh +"',"
+sql = sql + "'"+ time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"',"
+sql = sql + "'zzz2008')"
 try:
    # 执行sql语句
    cursor.execute(sql)

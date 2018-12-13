@@ -16,12 +16,11 @@ data = cursor.fetchone()
  
 print ("Database version : %s " % data)
 
-sql = """CREATE TABLE EMPLOYEE1 (
-         FIRST_NAME  CHAR(20) NOT NULL,
-         LAST_NAME  CHAR(20),
-         AGE INT,  
-         SEX CHAR(1),
-         INCOME FLOAT )"""
+sql = """CREATE TABLE LOGS_TRACERT (
+         IP_ADRESS  CHAR(20) NOT NULL,
+         STATUS CHAR(1),
+         CONTENT TEXT,
+         DATE_TIME DATE)"""
 
 # SQL 插入语句
 sql_b = """INSERT INTO EMPLOYEE1(FIRST_NAME,
