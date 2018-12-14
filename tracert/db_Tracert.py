@@ -2,6 +2,9 @@
  
 import pymysql
 import time
+import socket
+import requests
+from bs4 import BeautifulSoup
 
 # 获取外网IP
 def get_out_ip(url):
