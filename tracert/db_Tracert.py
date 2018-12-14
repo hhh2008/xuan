@@ -3,6 +3,20 @@
 import pymysql
 import time
 
+# 获取外网IP
+def get_out_ip(url):
+    r = requests.get(url)
+    txt = r.text
+    ip = txt[txt.find("[") + 1: txt.find("]")]
+    ### print('hhh2008 ip:' + ip)
+    return ip
+
+
+def get_real_url(url=r'http://www.ip138.com/'):
+    r = requests.get(url)
+    txt = r.text
+    soup = BeautifulSoup(txt,"html.parser").iframe
+    return soup["src"]
 
 def checkFile(x):
     filename=x+'.txt'
@@ -19,7 +33,7 @@ def checkFile(x):
 
 def insertDB(x,checkFile_y):
     # 打开数据库连接
-    db = pymysql.connect("localhost","tracert1","tracert1","tracert" )
+    db = pymysql.connect("172.26.79.249","tracert1","tracert1","tracert" )
  
     # 使用 cursor() 方法创建一个游标对象 cursor
     cursor = db.cursor()
@@ -36,13 +50,22 @@ def insertDB(x,checkFile_y):
     f = open(x+'.txt')
     hhh = f .read()
     f.close()
+
+    ### print (socket.gethostbyname(socket.gethostname()))
+    ### print (get_out_ip(get_real_url()))
+    ###   127.0.0.1
+
+    ### 可能是你的帐号不允许从远程登陆，只能在localhost。
+    ### 这个时候只要在localhost的那台电脑，登入MySQL后，更改
+    ### "mysql" 数据库里的 "user" 表里的 "host" 项，从"localhost"改称"%"
     
     #time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) 
     # SQL 插入语句
-    sql = """INSERT INTO LOGS_TRACERT(IP_ADRESS,
+    sql = """INSERT INTO LOGS_TRACERT(IP_ADRESS_IN,IP_ADRESS_OUT,
              STATUS, CONTENT, DATE_TIME,DB_NAME)
              VALUES ("""
-    sql = sql + "'172.26.79.249',"
+    sql = sql + "'" + socket.gethostbyname(socket.gethostname()) +"',"
+    sql = sql + "'" + get_out_ip(get_real_url()) +"',"    
     sql = sql + checkFile_y +","
     sql = sql + "'"+ x+"数据库连接具体情况- "+ hhh +"',"
     sql = sql + "'"+ time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) +"',"
@@ -74,4 +97,5 @@ for x in tup:
         checkFile_y="0"
     insertDB(x,checkFile_y)
 
-
+###   Version:2018.12.14 14:43   ###
+    
