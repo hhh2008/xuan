@@ -1,0 +1,22 @@
+
+通过最多 30 个跃点跟踪
+到 e7088.ce.akamaiedge.net [23.59.134.153] 的路由:
+
+  1     1 ms     1 ms     1 ms  172.26.79.254 
+  2    <1 毫秒   <1 毫秒   <1 毫秒 10.10.10.65 
+  3    11 ms    <1 毫秒   <1 毫秒 192.168.10.3 
+  4     *       45 ms     4 ms  113.247.230.193 
+  5     3 ms     3 ms     3 ms  222.247.28.101 
+  6     7 ms     7 ms     7 ms  192.168.193.253 
+  7     2 ms     3 ms     3 ms  61.137.3.1 
+  8    22 ms    19 ms    19 ms  202.97.71.229 
+  9    16 ms     *       17 ms  202.97.94.134 
+ 10    32 ms    30 ms    31 ms  202.97.94.94 
+ 11   120 ms   116 ms   115 ms  202.97.94.14 
+ 12   152 ms   154 ms   156 ms  ae-2.r31.tokyjp05.jp.bb.gin.ntt.net [129.250.2.155] 
+ 13   120 ms   122 ms   124 ms  ae-9.r25.osakjp02.jp.bb.gin.ntt.net [129.250.7.81] 
+ 14   164 ms   169 ms   166 ms  ae-2.r03.osakjp02.jp.bb.gin.ntt.net [129.250.7.33] 
+ 15   123 ms   125 ms   120 ms  ae-1.akamai-osa.osakjp02.jp.bb.gin.ntt.net [61.200.82.242] 
+ 16   113 ms   114 ms   119 ms  a23-59-134-153.deploy.static.akamaitechnologies.com [23.59.134.153] 
+
+跟踪完成。

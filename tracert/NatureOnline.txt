@@ -1,0 +1,23 @@
+
+通过最多 30 个跃点跟踪
+到 prod.springer2.map.fastlylb.net [151.101.0.95] 的路由:
+
+  1     1 ms     1 ms     1 ms  172.26.79.254 
+  2    <1 毫秒   <1 毫秒   <1 毫秒 10.10.10.65 
+  3    <1 毫秒   <1 毫秒   <1 毫秒 192.168.10.3 
+  4     *        2 ms     2 ms  113.247.230.193 
+  5     2 ms     2 ms     3 ms  222.247.28.101 
+  6     7 ms     7 ms     7 ms  192.168.193.253 
+  7     6 ms     6 ms     6 ms  61.137.6.205 
+  8    13 ms    15 ms    15 ms  202.97.77.149 
+  9    14 ms    14 ms    11 ms  202.97.91.154 
+ 10    13 ms    15 ms    15 ms  202.97.94.69 
+ 11   121 ms   126 ms   115 ms  xe-0-0-6.r27.tokyjp05.jp.bb.gin.ntt.net [129.250.66.9] 
+ 12   111 ms   111 ms   113 ms  ae-2.r31.tokyjp05.jp.bb.gin.ntt.net [129.250.2.155] 
+ 13   118 ms     *      114 ms  ae-3.r01.tokyjp08.jp.bb.gin.ntt.net [129.250.6.133] 
+ 14     *      126 ms   117 ms  ae-2.a00.tokyjp03.jp.bb.gin.ntt.net [129.250.5.55] 
+ 15    85 ms   179 ms    80 ms  ae-3.fastly.tokyjp03.jp.bb.gin.ntt.net [117.103.177.222] 
+ 16     *      112 ms     *     151.101.0.95 
+ 17   111 ms   112 ms   112 ms  151.101.0.95 
+
+跟踪完成。
