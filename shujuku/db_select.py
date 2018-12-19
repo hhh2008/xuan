@@ -16,7 +16,7 @@ cursor = db.cursor()
 
 sql = "select `处理网址`,处理名称 from db_address_wai GROUP BY `处理网址`"
 ### f = open("file1", "r")  # 打开文件
-fnew = open("c:\\tracert\\Tracert_All_GBK.bat", "w", encoding="GBK")
+fnew = open("c:\\tracert\\Tracert_All_GBK_-.bat", "w", encoding="GBK")
 
 
 try:
@@ -35,7 +35,7 @@ try:
       # 打印结果
 #      print ("IP_ADRESS=%s,STATUS=%d,CONTENT=%s,DATE_TIME=%s,DB_NAME=%s"%(IP_ADRESS, STATUS, CONTENT, DATE_TIME, DB_NAME ))
       print ("IP_ADRESS=%s,DB_NAME=%s"%(IP_ADRESS, DB_NAME))
-      fnew.write('tracert '+IP_ADRESS+' >c:\\tracert\\'+ DB_NAME +'.txt')
+      fnew.write('tracert '+IP_ADRESS+' >c:\\tracert\\'+ (DB_NAME.replace('/','-')).replace('&','-') +'.txt')
       fnew.write('\n')
 except:
    print ("Error: unable to fecth data")
@@ -45,6 +45,6 @@ db.close()
 fnew.close()  #关闭文件
 
 
-### Version 2018-12-18 16:15
+### Version 2018-12-19 10:47
 
 
