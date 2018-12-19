@@ -88,17 +88,58 @@ def insertDB(x,checkFile_y):
     db.close()
     return
 
-tup = ('IOP', 'Emerald','AIAA' ,'SPIE','SIAM','ASME')
+###'''=======================================''' 
+# 打开数据库连接
+db = pymysql.connect("localhost", "root", "", "tracert", charset='utf8' )
+
+### select `处理网址`,处理名称 from db_address_wai GROUP BY `处理网址`
+
+# 使用cursor()方法获取操作游标 
+cursor = db.cursor()
+
+# SQL 查询语句
+### sql = "SELECT * FROM LOGS_TRACERT WHERE DB_NAME = '%s'" % ('ASME')
+
+sql = "select `处理网址`,处理名称 from db_address_wai GROUP BY `处理网址`"
+### f = open("file1", "r")  # 打开文件
+###'''fnew = open("c:\\tracert\\Tracert_All_GBK_-.bat", "w", encoding="GBK")'''
+
+list_db_name=[]   ##空列表
+try:
+   # 执行SQL语句
+   cursor.execute(sql)
+   # 获取所有记录列表
+   results = cursor.fetchall()
+   for row in results:
+#      IP_ADRESS =row[0].strip()
+      DB_NAME = row[1].replace(' ','')
+      DB_NAME = DB_NAME.replace('/','-')
+      DB_NAME = DB_NAME.replace('&','-')
+      list_db_name.append(DB_NAME)
+      # 打印结果
+#      print ("IP_ADRESS=%s,DB_NAME=%s"%(IP_ADRESS, DB_NAME))
+###  list_db_name.append((DB_NAME.replace('/','-')).replace('&','-'))
+#      fnew.write('\n')
+except:
+   print ("Error: unable to fecth data")
+
+# 关闭数据库连接
+db.close()
+### fnew.close()  #关闭文件
+###'''=========================================='''
+tup = tuple(list_db_name)
+###tup = ('IOP', 'Emerald','AIAA' ,'SPIE','SIAM','ASME')
 for x in tup:
     # print (x)
     checkFile_x = checkFile(x)
     if checkFile_x:
-        print (x+ '连接正常.')
+        ### print (x+ ':连接正常.')
         checkFile_y="1"
     else:
-        print (x+ '不能正常连接.')
+        ### print (x+ ':不能正常连接!')
+        print (x+ ',')        
         checkFile_y="0"
-    insertDB(x,checkFile_y)
+#    insertDB(x,checkFile_y)#----------------临时注释
 
-###   Version:2018.12.14 14:43   ###
+###   Version:2018.12.19 15:18   ###
     
