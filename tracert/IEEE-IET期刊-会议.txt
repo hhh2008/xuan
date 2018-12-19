@@ -1,0 +1,24 @@
+
+通过最多 30 个跃点跟踪
+到 www.ieeexplore.ieee.org [140.98.193.152] 的路由:
+
+  1     1 ms     1 ms     1 ms  172.26.79.254 
+  2     *        *       <1 毫秒 10.10.10.65 
+  3    <1 毫秒   <1 毫秒   <1 毫秒 192.168.10.3 
+  4     *        3 ms     2 ms  113.247.230.193 
+  5     5 ms     3 ms     3 ms  222.247.28.225 
+  6     1 ms     7 ms     8 ms  192.168.193.253 
+  7     1 ms    <1 毫秒    1 ms  61.137.3.45 
+  8    11 ms    11 ms    11 ms  202.97.77.117 
+  9    14 ms    11 ms    11 ms  202.97.91.18 
+ 10    11 ms    11 ms    11 ms  202.97.91.137 
+ 11   176 ms   175 ms   175 ms  202.97.45.246 
+ 12   172 ms   167 ms   167 ms  202.97.50.26 
+ 13   177 ms   177 ms   177 ms  0.xe-5-2-3.GW2.LAX1.ALTER.NET [157.130.230.25] 
+ 14   228 ms   227 ms   227 ms  Bundle-Ether4.GW5.EWR6.ALTER.NET [140.222.0.219] 
+ 15   240 ms   240 ms   241 ms  ieee.org.customer.alter.net [157.130.217.158] 
+ 16   222 ms   228 ms   228 ms  semaphore_lp.ieee.org [140.98.206.201] 
+ 17   255 ms   256 ms   256 ms  anakin-ext.ieee.org [140.98.210.1] 
+ 18   257 ms   257 ms   258 ms  www.ieeebiometricscertification.org [140.98.193.152] 
+
+跟踪完成。

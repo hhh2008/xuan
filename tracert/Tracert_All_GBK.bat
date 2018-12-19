@@ -32,7 +32,7 @@ tracert www.cashl.edu.cn >c:\tracert\CASHL.txt
 tracert www.emeraldinsight.com >c:\tracert\Emerald.txt
 tracert www.engineeringvillage.com >c:\tracert\EiCompendex.txt
 tracert www.HICDS.cn >c:\tracert\国道会议发现系统-HICDS.txt
-tracert www.ieeexplore.ieee.org >c:\tracert\IEEE/IET期刊/会议.txt
+tracert www.ieeexplore.ieee.org >c:\tracert\IEEE-IET期刊-会议.txt
 tracert www.iop.org >c:\tracert\IOP.txt
 tracert www.istic.ac.cn >c:\tracert\ISTIC.txt
 tracert www.jstor.org >c:\tracert\JSTOR回溯期刊.txt
@@ -46,6 +46,6 @@ tracert www.sciencedirect.com >c:\tracert\Elsevier.txt
 tracert www.sciencemag.org >c:\tracert\ScienceOnline.txt
 tracert www.socolar.com >c:\tracert\Socolar检索系统.txt
 tracert www.spischolar.com >c:\tracert\SpiScholar学术资源在线.txt
-tracert www.springerlink.com >c:\tracert\Springer期刊/会议.txt
-tracert www.tandfonline.com >c:\tracert\Taylor&Francis.txt
-tracert www.webofknowledge.com >c:\tracert\SCI/CPCI-S.txt
+tracert www.springerlink.com >c:\tracert\Springer期刊-会议.txt
+tracert www.tandfonline.com >c:\tracert\Taylor-Francis.txt
+tracert www.webofknowledge.com >c:\tracert\SCI-CPCI-S.txt
