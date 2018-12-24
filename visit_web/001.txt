@@ -1,0 +1,24 @@
+import requests
+r = requests.get("http://www.cnblogs.com/yoyoketang/")
+print(r.elapsed)
+print(r.elapsed.total_seconds())
+
+import requests
+r = requests.get("http://www.webofknowledge.com/")
+print(r.elapsed)
+print(r.elapsed.total_seconds())
+
+
+import requests
+r = requests.get("http://www.engineeringvillage.com/search/quick.url?acw=&utt=")
+print(r.elapsed)
+print(r.elapsed.total_seconds())
+
+
+import requests
+r = requests.get("https://arc.aiaa.org/")
+print(r.elapsed)
+print(r.elapsed.total_seconds())
+
+
+
