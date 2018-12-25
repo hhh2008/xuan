@@ -127,8 +127,8 @@ except:
 db.close()
 ### fnew.close()  #关闭文件
 ###'''=========================================='''
-tup = tuple(list_db_name)
-###tup = ('IOP', 'Emerald','AIAA' ,'SPIE','SIAM','ASME')
+tup1 = tuple(list_db_name)
+tup = ('IOP', 'Emerald','AIAA' ,'SPIE','SIAM','ASME')
 for x in tup:
     # print (x)
     checkFile_x = checkFile(x)
@@ -141,5 +141,5 @@ for x in tup:
         checkFile_y="0"
 #    insertDB(x,checkFile_y)#----------------临时注释
 
-###   Version:2018.12.19 15:18   ###
+###   Version:2018.12.20 15:47   ###
     
