@@ -1,0 +1,9 @@
+http://www.cnblogs.com/whatisfantasy/p/6440585.html
+
+搞定python多线程和多进程
+
+
+===
+https://www.cnblogs.com/yeayee/p/4952022.html
+
+Python一篇学会多线程
