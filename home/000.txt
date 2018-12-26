@@ -1,9 +1,15 @@
 http://www.cnblogs.com/whatisfantasy/p/6440585.html
 
-�㶨python���̺߳Ͷ����
+搞定python多线程和多进程
 
 
 ===
 https://www.cnblogs.com/yeayee/p/4952022.html
 
-Pythonһƪѧ����߳�
+Python一篇学会多线程
+
+注意：原来的代码是Python2版本的，现在改为Python3的，主要是print语句；apply函数在Python3里面已经不存在了apply(self.func,self.args)修改为self.func(*self.args)
+缩进问题Tab与空格键的处理，在Sublime Text的设定，首选项-设置默认的160行，首选项-设置用户；
+说明文件的编码原来是GBK,现在注意改为UTF-8；
+
+
