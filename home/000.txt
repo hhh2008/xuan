@@ -1,3 +1,7 @@
+https://www.cnblogs.com/Hwan/p/5956118.html
+浅析Python多线程 实例一：我们将要请求三个不同的url
+......2018/12/27
+
 http://www.cnblogs.com/whatisfantasy/p/6440585.html
 
 搞定python多线程和多进程

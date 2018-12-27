@@ -1,0 +1,15 @@
+这个问题可以通过安装一个插件sublimeREPL解决 
+在已经安装了包管理器的前提下（如果没有安装可以看这里的”安装包管理器”部分），按ctrl+shift+p快捷键呼出一个输入框，输入Install Package，回车，在新出现的输入框里输入SublimeREPL，在下面的选择列表中选中回车就会开始安装，一般几秒钟就能装完。 
+在刚刚的python文件的界面里点击上方菜单栏的tools->sublimeREPL->python->python run current file，这时候就像IDLE一样，会弹出一个新的窗口，而且是可交互的，可以输入
+
+打开刚刚提到的preferences->Key Binding-User，写入以下内容
+[
+    { "keys": ["f5"], "caption": "SublimeREPL:Python", 
+                      "command": "run_existing_window_command", "args":
+                      {
+                           "id": "repl_python_run",
+                           "file": "config/Python/Main.sublime-menu"
+                      } 
+    },
+]
+http://www.cnblogs.com/ginvip/p/6241699.html

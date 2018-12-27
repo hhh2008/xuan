@@ -1,0 +1,88 @@
+sublime text3搭建python调试环境
+
+1、安装package control（方便安装插件包）；
+
+2、使用package control安装SublimeCode Intel、AutoPEP8、Sublime REPL：
+
+     （1）按下CTRL+shift+p挑出命令面板；
+
+     （2）输入install package选项并回车，然后分别在列表中选中上述三种插件进行安装；
+
+     （3）如下图进行选择即可进行pdb调试（tools->Sublime REPL->Python->python-pdb current file)
+注：（1）sublime设置快捷键F5为运行，Ctrl+F5调试。就会对python调试方便很多。
+
+Preferneces -> Key Bingdings-User进行设置
+
+[
+  {
+"keys":[
+  "f5"
+],
+"caption":"SublimeREPL: Python - RUN current file",
+"command":"run_existing_window_command",
+"args":{
+  "id":"repl_python_run",
+  "file":"config/Python/Main.sublime-menu"
+}
+  },
+  {
+"keys":[
+  "ctrl+f5"
+],
+"caption":"SublimeREPL: Python - PDB current file",
+"command":"run_existing_window_command",
+"args":
+{
+    "id":"repl_python_pdb",
+    "file":"config/Python/Main.sublime-menu"
+}
+  }
+]
+
+        （2）autoPEP8可以自动将python规范化
+
+        （3）b test：在test函数处设置断点，断点号为1
+
+                 b 10：在第10行设置断点，断点号为2
+
+                 b:显示所有断点信息
+
+                 condition 2 a==7：在2号断点处设置条件 a==7
+
+                 cl 1：删除1号断点
+
+                 n：单步跟踪，不进入函数
+
+                 s：单步跟踪，进入函数
+
+                 l：查看运行到某处的代码
+
+                 quit：退出
+--------------------- 
+作者：苏君1号 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_35308309/article/details/78106800 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+========
+
+安装SublimeCodeIntel插件，可以实现语法自动完成功能。
+安装AutoPEP8可以自动将python规范化。
+重点安装SublimeREPL插件，安装打开python文件时，将布局切换为2行查式，
+
+然后你就可以输出各种pdb命令进行调试了。比如：
+
+(Pdb) b 31              #在31行建立断点
+
+Breakpoint 1 at c:\work\code\workspace\test\sqlalchemy\docopt.py:31
+
+(Pdb) r                    #运行到断点处
+> c:\work\code\workspace\test\sqlalchemy\docopt.py(31)<module>()
+-> m=MyClass()
+
+(Pdb)                       #在这个命令行下就可以执行当前上下文的python
+
+ 
+
+具体的pdb命令百度去.
