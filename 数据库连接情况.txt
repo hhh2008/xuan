@@ -1,6 +1,6 @@
-12.19数据库检查情况：
+2019.1.7 数据库检查情况：
 
-优阅外文原版电子书,无资源
+优阅外文原版电子书,无资源****************************************
 ASCE,慢
 WorldlibE-BOOK外文原版图书,This page is unavailable due to copyright restrictions.]
 SIAM,慢
@@ -8,12 +8,23 @@ Frontiers期刊全文库,慢
 AMS,----
 APS,---
 PQDT学位论文全文,---
-PQDT入口2,
+PQDT入口2,*************************************
 AIP,
 CASHL,
 EiCompendex,全文无
 IOP,
-ISTIC,===
+ISTIC,===***************************************
 ScienceOnline,慢
 SpiScholar学术资源在线====
+
 不能正常连接，其他正常
+
+
+++
+AGU  https://agupubs.onlinelibrary.wiley.com/----
+
+AMS  https://journals.ametsoc.org/
+
+Worldlib学术论文智能检索工具（试用）    http://library.nudt.edu.cn/resources?cid=2
+
+172.16.103.11
