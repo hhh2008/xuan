@@ -1,0 +1,18 @@
+https://yq.aliyun.com/articles/29941
+
+如果你已经通过docker-machine创建了虚拟机的话，则需要通过登录机器修改配置了
+首先通过docker-machine ssh <machine-name>登录虚拟机
+然后修改/var/lib/boot2docker/profile文件，将--registry-mirror=<your accelerate address>添加到EXTRA_ARGS中
+最后sudo /etc/init.d/docker restart重启Docker服务就可以了
+
+docker run hello-world
+docker image ls
+
+docker container ls --all
+http://www.runoob.com/docker/docker-container-usage.html
+runoob@runoob:~# docker pull training/webapp  # 载入镜像
+runoob@runoob:~# docker run -d -P training/webapp python app.py
+-P:将容器内部使用的网络端口映射到我们使用的主机上。
+docker ps
+docker run -d -p 5000:5000 training/webapp python app.py
+
