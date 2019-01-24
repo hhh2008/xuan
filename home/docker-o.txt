@@ -1,4 +1,11 @@
 https://yq.aliyun.com/articles/29941
+https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file
+https://www.cnblogs.com/52fhy/p/8413029.html
+基于boot2docker部署Docker环境
+
+你可以使用VirtualBox共享文件夹选项将图像存储在VirtualBox图像之外。我能够在C:\驱动器中使用一个文件夹，以满足所需要的数据。
+
+你也必须挂载/var/lib/docker到主机中的本地文件夹。设置“自动安装”，但不要设置“只读”。
 
 如果你已经通过docker-machine创建了虚拟机的话，则需要通过登录机器修改配置了
 首先通过docker-machine ssh <machine-name>登录虚拟机
@@ -16,3 +23,101 @@ runoob@runoob:~# docker run -d -P training/webapp python app.py
 docker ps
 docker run -d -p 5000:5000 training/webapp python app.py
 
+默认情况下Docker的存放位置为：/var/lib/docker 
+可以通过下面命令查看具体位置：
+sudo docker info | grep "Docker Root Dir"
+===
+docker search imagename    # 查找镜像
+docker pull imagename   # 下载最新版
+docker pull imagename:5.6    # 下载指定版本
+
+docker images     # 查看本地镜像
+
+docker run imagename   # 运行镜像
+docker run -t -i ubuntu:15.10 /bin/bash    # 使用版本为15.10的ubuntu系统镜像来运行容器
+# docker run -d --name mynginx nginx   #启动nginx镜像，没有会自动pull
+
+# docker attach d20f3dc6cd92  #进入一个正在运行的容器
+
+# docker stop bfd094233f96   #停止一个容器
+docker stop $(docker ps -a -q)    # 停止所有的container，这样才能够删除其中的images：
+
+docker rm bfd094233f96   #删除一个容器，默认并不会删除运行中的容器。所以删除容器前，必须先停止容器
+docker rmi training/sinatra   # 删除本地镜像
+docker rmi <image id>    #  删除镜像  删除前必须先停止所有的容器。image id可以通过docker images查看
+docker rmi $(docker images -q)    # 删除全部image
+docker rm $(docker ps -a -q)   #  如果想要删除所有container的话再加一个指令：
+docker rmi $(docker images -q -f "dangling=true")   # 清理所有未打过标签的本地镜像，其中 -q 和 -f 是 quiet，–filter 的缩写
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")     # 删除所有id为<None>的镜像
+
+docker logs [container ID or NAMES]    # 获取容器的输出信息
+
+docker cp container:path hostpath   # 从容器内复制文件到指定的路径上
+
+
+-t 选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上，
+-i 则让容器的标准输入保持打开。
+–name 使用一个自定义的名字
+--------------------- 
+作者：数据架构师 
+来源：CSDN 
+原文：https://blog.csdn.net/luanpeng825485697/article/details/80921390 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+docker下载的镜像信息可以在
+/var/lib/docker/image/aufs/repositories.json文件中查看
+docker save -o ubuntu_14.04.tar ubuntu:14.04   # 存储镜像
+
+# docker load -i ubuntu_14.04.tar    载入镜像： 或者使用 
+# cat ubuntu.tar |  docker import - test/ubuntu:v1.0  
+创建镜像
+
+当我们从docker镜像仓库中下载的镜像不能满足我们的需求时，我们可以通过以下两种方式对镜像进行更改。
+
+1.从已经创建的容器中更新镜像，并且提交这个镜像
+2.使用 Dockerfile 指令来创建一个新的镜像
+
+将本地应用构建成docker镜像
+docker build -t myimage .
+docker build -t myimage:1.0.2 -f ./myimage/Dockerfile .
+命令中myimage为镜像的名称，最后的.表示当前目录。 -f可以指定dockerfile文件的地址
+
+参考：http://www.runoob.com/docker/docker-image-usage.html
+--------------------- 
+作者：数据架构师 
+来源：CSDN 
+原文：https://blog.csdn.net/luanpeng825485697/article/details/80921390 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+https://blog.csdn.net/luanpeng825485697/article/details/80921390
+dockerfile
+一. Dockerfile 基本结构
+
+一般的，Dockerfile 分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。’#’ 为 Dockerfile 中的注释
+
+进入正在运行的容器内部，同时运行bash(比attach更好用)
+。
+docker exec -t -i <id/container_name>  /bin/bash
+查看需要附着的容器id
+$docker ps | less -S
+CONTAINER ID        IMAGE                                                 
+9cf7b563f689        hello.demo.kdemo:v160525.202747
+
+$./indocker.sh 9cf7b563f689 
+--------------------- 
+作者：数据架构师 
+来源：CSDN 
+原文：https://blog.csdn.net/luanpeng825485697/article/details/80921390 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+docker-machine create --engine-registry-mirror=https://xpjroysv.mirror.aliyuncs.com -d virtualbox default
+===
+内网无法联网，因此不能直接运行docker pull命令下载docker镜像，可按下述方法获取docker镜像： 
+步骤: 
+1. 在可以联网的机子上执行docker pull命令下载镜像，如:sudo docker pull freewil/bitcoin-testnet-box，命令使用参考Docker pull 命令 
+2. 然后运行docker save命令将镜像保存为tar归档文件，如：docker save -o bitcoin-testnet-box.tar freewil/bitcoin-testnet-box，命令使用参考Docker save 命令 
+3. 将保存的bitcoin-testnet-box.tar归档文件拷贝进内网机子 
+4. 内网机子上执行dock load命令加载保存的tar归档文件，如：docker load -i bitcoin-testnet-box.tar
+--------------------- 
+作者：yzpyzp 
+来源：CSDN 
+原文：https://blog.csdn.net/yzpbright/article/details/81105944 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+===
