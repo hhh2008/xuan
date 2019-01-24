@@ -1,0 +1,53 @@
+https://www.cnblogs.com/zhxshseu/p/011245978fc443fbc6f273ad7e22ed7c.html
+
+部署voting app的第一步，是为集群节点（swarm nodes）创建 Docker machines。我们可以在不同的实体PC、虚拟机或者云服务器上创建这些 Docker化 的主机。
+
+
+
+在本例中，我们使用Docker Machine来创建两个虚拟机（virtual machines）在同一个系统上(See Docker Machine Overview to learn more.)。
+
+
+创建 manager 和 worker 虚拟机
+
+使用 docker machine 创建一个本地的 virtual machine
+
+docker-machine create --driver hyperv <HOSTNAME>
+
+
+这里使用的是 windows 里的 hyperv 创建的虚拟机
+
+
+创建过程中出现一个 
+
+   Error creating machine: Error in driver during machine creation: exit status 1
+
+解决方案：
+
+•   按照链接https://docs.docker.com/machine/drivers/hyper-v/的说明，配置系统。
+
+•   首先在Hyperv管理工具里面，创建一个新的虚拟交换机，并使用外部链接（如果不指定，默认链接到系统的DockerNAT上，它是在docker安装时候创建的，用于 docker for windows 的，不是给我们使用的）
+
+•   然后将创建的新虚拟机，主动链接到该交换机上 
+
+•   重启
+•   注意：创建虚拟交换机时，要选择实体网卡；创建过程要在管理员模式下进行，不然会出现一直停在waiting for host
+
+
+
+下面是一个创建的例子：
+
+docker-machine create -d hyperv --hyperv-virtual-switch "Primary Virtual Switch" --hyperv-disk-size "5000" --hyperv-memory "512" manager
+Running pre-create checks...
+
+
+=====
+ docker-machine create -d hyperv --hyperv-virtual-switch "Primary Virtual Switch" manager1
+
+不能使用中文的！
+ docker-machine create -d hyperv --hyperv-virtual-switch "虚拟交换机01" manager1
+ docker-machine create -d hyperv --hyperv-virtual-switch 虚拟交换机01 manager1
+
+ https://github.com/boot2docker/boot2docker/releases/download/v18.09.1/boot2docker.iso
+
+
+
