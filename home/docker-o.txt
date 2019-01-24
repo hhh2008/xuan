@@ -108,6 +108,10 @@ $./indocker.sh 9cf7b563f689
 原文：https://blog.csdn.net/luanpeng825485697/article/details/80921390 
 版权声明：本文为博主原创文章，转载请附上博文链接！
 docker-machine create --engine-registry-mirror=https://xpjroysv.mirror.aliyuncs.com -d virtualbox default
+
+docker-machine create --engine-registry-mirror=https://xpjroysv.mirror.aliyuncs.com -d hyperv --hyperv-virtual-switch "Primary Virtual Switch" default01
+
+-d hyperv --hyperv-virtual-switch "Primary Virtual Switch"
 ===
 内网无法联网，因此不能直接运行docker pull命令下载docker镜像，可按下述方法获取docker镜像： 
 步骤: 
@@ -121,3 +125,8 @@ docker-machine create --engine-registry-mirror=https://xpjroysv.mirror.aliyuncs.
 原文：https://blog.csdn.net/yzpbright/article/details/81105944 
 版权声明：本文为博主原创文章，转载请附上博文链接！
 ===
+
+在Windows 10上运行Linux及Windows容器
+http://weixin.niurenqushi.com/article/2017-02-10/4764088.html
+“从此社区再无 Docker？” 那 “Moby” 又是什么？
+https://www.linuxidc.com/Linux/2017-05/144259.htm
