@@ -130,3 +130,54 @@ docker-machine create --engine-registry-mirror=https://xpjroysv.mirror.aliyuncs.
 http://weixin.niurenqushi.com/article/2017-02-10/4764088.html
 “从此社区再无 Docker？” 那 “Moby” 又是什么？
 https://www.linuxidc.com/Linux/2017-05/144259.htm
+
+使用 docker 搭建开发环境
+https://www.cnblogs.com/llhf/p/5149378.html
+Advanced Package Tool，又名apt-get，是一款适用于Unix和Linux系统的应用程序管理器。
+apt-get update
+apt-get install packagename
+退出时如果想继续运行：按顺序按【ctrl+p】【ctrl+q】
+安装开发环境需要的软件
+这一步的具体操作，取决于你需要的开发环境都有哪些，我一般会安装 nginx、php5-fpm、mysql、mongodb、redis 和 python 的环境，使用 apt-get 安装(别忘了先  apt-get update) 即可。当然还会有一些其他操作，比如 nginx 的配置，这些和平时在 liunx 上安装服务是一样的。
+等你安装完了环境，先不要着急 stop 掉对应容器。
+保存更改的容器
+上一步修改容器之后，如果直接关掉容器，这些改动不会在下次启动时保留，所以需要把它存储到本地另外一个镜像中。
+方法很简单，同样需要 attach 那一步获取的 ID
+docker commit 028ce7fa5596 ptj:dev
+
+
+
+docker-machine 常用命令
+最后说一下常用命令把，其实也没什么好讲的，都在help里面有，下面都是docker-machine后加的命令就是docker-machine command
+
+active 查看活跃的 Docker 主机
+config 输出连接的配置信息
+create 创建一个 Docker 主机
+env 显示连接到某个主机需要的环境变量
+inspect 输出主机更多信息
+ip 获取主机地址
+kill 停止某个主机
+ls 列出所有管理的主机
+provision 重新设置一个已存在的主机
+regenerate-certs 为某个主机重新生成 TLS 认证信息
+restart 重启主机
+rm 删除某台主机
+ssh SSH 到主机上执行命令
+scp 在主机之间复制文件
+mount 挂载主机目录到本地
+start 启动一个主机
+status 查看主机状态
+stop 停止一个主机
+upgrade 更新主机 Docker 版本为最新
+url 获取主机的 URL
+version 输出 docker-machine 版本信息
+help 输出帮助信息
+
+每个参数又都是有help的，可以通过
+docker-machine COMMAND --help
+来查看
+
+作者：bboysoul
+链接：https://www.jianshu.com/p/cc3bb8797d3b
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
