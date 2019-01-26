@@ -196,5 +196,46 @@ Minikube可以说是基于Docker Machine的最有趣的VM之一——你可以�
 
 你可能不会拥有Docker for Windows那样的速度，但是毕竟你不需要Hyper-V就能够构建和运行容器了。
 最后，如果你要运行Windows容器——base镜像是来自于Windows的容器——Docker for Windows是唯一选择。 你只能使用Windows 10 Pro或者Enterprise版。
+安装Chocolatey很简单，你可以在它的官方网站找到步骤。简单来说，就这么几步：
+
+1、以管理员启动cmd.exe
+
+2、执行下面这个命令：
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+3、重新加载cmd.exe
+
+如果安装成功，那么你可以搜索软件包：
+choco search docker
+
+https://yq.aliyun.com/articles/221687
+Windows
+
+下载 minikube-windows-amd64.exe 文件，并重命名为 minikube.exe
+启动
+minikube start --registry-mirror=https://xpjroysv.mirror.aliyuncs.com --vm-driver=hyperv --hyperv-virtual-switch="Primary Virtual Switch"
 
 
+//mirror=https://xpjroysv.mirror.aliyuncs.com -d hyperv --hyperv-virtual-switch "Primary Virtual Switch"
+
+打开Kubernetes控制台
+minikube dashboard
+对于使用Hyper-V环境的用户，首先应该打开Hyper-V管理器创建一个外部虚拟交换机，
+我们可以用如下命令来创建基于Hyper-V的Kubernetes测试环境
+.\minikube.exe start --registry-mirror=https://registry.docker-cn.com --vm-driver="hyperv" --memory=4096 --hyperv-virtual-switch="MinikubeSwitch"
+
+https://feisky.gitbooks.io/kubernetes/introduction/101.html
+--------226here!---------
+
+
+minikube start --registry-mirror=http://xxxxxxxx.m.daocloud.io --vm-driver=hyperv --hyperv-virtual-switch="minikubeSwitch"
+Starting local Kubernetes v1.9.4 cluster...
+Starting VM...
+E0323 15:18:37.885937 8624 start.go:159] Error starting host: Error creating host: Error executing step: Creating VM.
+: open /Users/zhong/.minikube/cache/iso/minikube-v0.25.1.iso: The system cannot find the path specified.
+
+原因
+当前目录和minikube缓存目录不在一个盘分区，如上当前分区是D盘，而minikube缓存默认在C盘用户目录的.minikube目录下。
+
+解决方法
+方法一：命令行切换到C盘
+方法二：环境变量MINIKUBE_HOME设置到D盘
