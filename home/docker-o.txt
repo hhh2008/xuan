@@ -181,3 +181,20 @@ docker-machine COMMAND --help
 链接：https://www.jianshu.com/p/cc3bb8797d3b
 來源：简书
 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
+===
+http://dockone.io/article/8136
+如何在Windows 10上运行Docker和Kubernetes？
+
+你有许多基于Docker Machine的替代品可用，例如Docker toolbox或者minikube。
+
+Docker Machine的工作方式很简单：有一个VM装好了Linux和Docker给你。你可以从你的主机连到虚拟机上的Docker deamon。
+
+Minikube可以说是基于Docker Machine的最有趣的VM之一——你可以在里面运行Kubernetes集群。
+
+事实上，minikube是一个运行Docker和Kubernetes的VM。它通常是用来单独运行Kubernetes的，但是你也可以用它来跑Docker容器。
+
+你可能不会拥有Docker for Windows那样的速度，但是毕竟你不需要Hyper-V就能够构建和运行容器了。
+最后，如果你要运行Windows容器——base镜像是来自于Windows的容器——Docker for Windows是唯一选择。 你只能使用Windows 10 Pro或者Enterprise版。
+
+
