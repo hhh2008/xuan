@@ -1,0 +1,145 @@
+IPython介绍
+内省
+在变量的前面或者后面加上一个问号?，就可以将有关该对象的一些通用信息显示出来，这就叫做对象的内省。
+使用历史命令history
+在IPython shell中，使用历史命令可以简单地使用上下翻页键即可，另外我们也可以使用hist命令(或者history命令)查看所有的历史输入。（正确的做法是使用%hist，在这里，%hist也是一个魔法命令）
+如果在hist命令之后加上-n，即hist -n也可以显示出输入的序号
+
+另外，_，__，___和_i，_ii，_iii变量保存着最后三个输出和输入对象。_n和_in(这里的n表示具体的数字)变量返回第n个输出和输入的历史命令。
+
+使用%run命令运行脚本
+在ipython会话环境中，所有文件都可以通过%run命令当做Python程序来运行，输入%run 路径+python文件名称即可
+
+使用%timeit命令快速测量代码运行时间
+在一个交互式会话中，我们可以使用%timeit魔法命令快速测量代码运行时间。相同的命令会在一个循环中多次执行，多次运行时长的平均值作为该命令的最终评估时长。-n 选项可以控制命令在单词循环中执行的次数，-r选项控制执行循环的次数。
+--------------------- 
+作者：KLeonard 
+来源：CSDN 
+原文：https://blog.csdn.net/gavin_john/article/details/53086766 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+使用%debug命令进行快速debug
+ipython带有一个强大的调试器。无论何时控制台抛出了一个异常，我们都可以使用%debug魔法命令在异常点启动调试器。接着你就能调试模式下访问所有的本地变量和整个栈回溯。使用u和d向上和向下访问栈，使用q退出调试器。在调试器中输入?可以查看所有的可用命令列表。
+
+我们也可以使用%pdb魔法命令来激活IPython调试器，这样，每当异常抛出时，调试器就会自动运行。
+--------------------- 
+使用Pylab进行交互式计算
+%pylab魔法命令可以使Numpy和matplotlib中的科学计算功能生效，这些功能被称为基于向量和矩阵的高效操作，交互可视化特性。它能够让我们在控制台进行交互式计算和动态绘图。 
+我们可以在IPython中直接使用系统shell，并获取读取结果作为一个Python字符串列表。为了实现这种功能，我们需要使用感叹号!作为shell命令的前缀。比如现在在我的windows系统中，直接在IPython中ping百度：
+
+
+四.%run命令
+
+在ipython会话环境中，所有文件都可以通过%run命令当做Python程序来运行。
+
+输入 %run 路径+python文件名称即可。
+中断正在执行的代码（急性子必备23333）
+
+按下Ctrl-C就会引发一个KeyboardInterrupt。除了一些非常特殊的情况下，绝大部分python程序都会立即停止执行
+
+键盘快捷键
+
+其实不到真正使用我也记不住23333，在此粘贴给大家作为备忘。
+
+Ctrl-P    或上箭头键 后向搜索命令历史中以当前输入的文本开头的命令
+Ctrl-N   或下箭头键 前向搜索命令历史中以当前输入的文本开头的命令
+Ctrl-R   按行读取的反向历史搜索（部分匹配）
+Ctrl-Shift-v   从剪贴板粘贴文本
+Ctrl-C   中止当前正在执行的代码
+Ctrl-A   将光标移动到行首
+Ctrl-E   将光标移动到行尾
+Ctrl-K   删除从光标开始至行尾的文本
+Ctrl-U   清除当前行的所有文本译注12
+Ctrl-F   将光标向前移动一个字符
+Ctrl-b   将光标向后移动一个字符
+Ctrl-L   清屏
+
+魔术命令
+
+粘贴在此以作备忘
+
+命令 说明
+%quickref 显示IPython的快速参考
+%magic 显示所有魔术命令的详细文档
+%debug 从最新的异常跟踪的底部进入交互式调试器
+%hist 打印命令的输入（可选输出）历史
+%pdb 在异常发生后自动进入调试器
+%paste 执行剪贴板中的Python代码
+%cpaste 打开一个特殊提示符以便手工粘贴待执行的Python代码
+%reset 删除interactive命名空间中的全部变量/名称
+%page OBJECT 通过分页器打印输出OBJECT
+%run script.py 在IPython中执行一个Python脚本文件
+%prun statement 通过cProfile执行statement，并打印分析器的输出结果
+%time statement 报告statement的执行时间
+%timeit statement 多次执行statement以计算系综平均执行时间。对那些执行时  间非常小的代码很有用
+%who、%who_ls、%whos 显示interactive命名空间中定义的变量，信息级别/冗余度可变
+%xdel variable 删除variable，并尝试清除其在IPython中的对象上的一切引用
+
+基于Qt的富GUI控制台
+
+Ipython团队开发了一个基于Qt框架（其目的是为终端应用程序提供诸如内嵌图片、多行编辑、语法高亮之类的富文本剪辑功能）的GUI控制台。
+
+使用
+ipython qtconsole --pylab=inline
+来启动的话可为其添加绘图功能。
+
+matplotlib集成与pylab模式
+
+通常我们通过在启动Ipython时加上--pylab标记来集成matplotlib
+
+注意空格啊~是
+
+ipython --pylab
+
+=====
+
+logging
+把print()替换为logging是第3种方式，和assert比，logging不会抛出错误，而且可以输出到文件：
+import logging
+
+s = '0'
+n = int(s)
+logging.info('n = %d' % n)
+print(10 / n)
+
+logging.info()就可以输出一段文本。运行，发现除了ZeroDivisionError，没有任何信息。怎么回事？
+
+别急，在import logging之后添加一行配置再试试：
+
+
+
+import logging
+logging.basicConfig(level=logging.INFO)
+
+
+看到输出了：
+$ python err.py
+INFO:root:n = 0
+Traceback (most recent call last):
+  File "err.py", line 8, in <module>
+    print(10 / n)
+ZeroDivisionError: division by zero
+
+这就是logging的好处，它允许你指定记录信息的级别，有debug，info，warning，error等几个级别，当我们指定level=INFO时，logging.debug就不起作用了。同理，指定level=WARNING后，debug和info就不起作用了。这样一来，你可以放心地输出不同级别的信息，也不用删除，最后统一控制输出哪个级别的信息。
+
+logging的另一个好处是通过简单的配置，一条语句可以同时输出到不同的地方，比如console和文件。
+
+pdb
+第4种方式是启动Python的调试器pdb，让程序以单步方式运行，可以随时查看运行状态。我们先准备好程序：
+
+小结
+写程序最痛苦的事情莫过于调试，程序往往会以你意想不到的流程来运行，你期待执行的语句其实根本没有执行，这时候，就需要调试了。
+
+虽然用IDE调试起来比较方便，但是最后你会发现，logging才是终极武器。
+
+https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431915578556ad30ab3933ae4e82a03ee2e9a4f70871000
+!!!!廖雪峰的官方网站!!!
+
+https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143191375461417a222c54b7e4d65b258f491c093a515000
+
+
+
+
+
+
+

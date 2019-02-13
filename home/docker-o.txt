@@ -214,6 +214,7 @@ Windows
 启动
 minikube start --registry-mirror=https://xpjroysv.mirror.aliyuncs.com --vm-driver=hyperv --hyperv-virtual-switch="Primary Virtual Switch"
 
+minikube stop
 
 //mirror=https://xpjroysv.mirror.aliyuncs.com -d hyperv --hyperv-virtual-switch "Primary Virtual Switch"
 
@@ -239,3 +240,20 @@ E0323 15:18:37.885937 8624 start.go:159] Error starting host: Error creating hos
 解决方法
 方法一：命令行切换到C盘
 方法二：环境变量MINIKUBE_HOME设置到D盘
+
+Docker之应用数据管理(volume/bind mount/tmpfs)
+https://blog.csdn.net/m0_37904728/article/details/78635499
+https://blog.csdn.net/lin521lh/article/details/78341789
+Docker学习六：数据管理
+
+打开cmd安装PyQt5
+PyQt5不再提供Qt Designer等工具，所以需要再安装pyqt5-tools
+
+PyQt5 (附安装教程) v5.8.2
+https://www.wishdown.com/soft/112760.html
+安装流程 
+PyQt5安装 
+在cmd下输入
+pip install PyQt5 
+完成PyQt5安装，再安装qt designer，可以使用pip安装
+pip install PyQt5-tools
