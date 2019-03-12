@@ -1,0 +1,71 @@
+D:\workspaces-itcast\template\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\work\Catalina\localhost\hrmapp\org\apache\jsp\WEB_002dINF\jsp\employee\employee_jsp.class
+
+关于设计模式我觉得不用学太多，但以下三个模式是学习Spring必不可少的：factory模式（包括简单工厂和抽象工厂）， Strategy模式，Template method模式。如果不掌握这些你就根本没法领悟Spring的精髓，只能依样画葫芦地照搬，这是很可怕的事。
+
+http://www.cnblogs.com/wuya/p/jhipster-microservice-spring-cloud-demo.html
+简介
+jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。
+毫不客气的说 ：学会了这套框架，你就是程序开发/程序架构界的潮男。对,hipster的意思就是：追求新奇的人。
+
+安装the Node.js website (推荐Long Time Support版本).这也会安装NPM,NODE的包管理工具,将会在接下来的命令中使用.
+安装 Yeoman: npm install -g yo
+安装 Bower: npm install -g bower
+安装 Gulp: npm install -g gulp
+安装 JHipster: npm install -g generator-jhipster   （此安装过程中，可能出现一些异常。npm install -g npm）
+
+https://blog.csdn.net/yuxiangjie12/article/details/54341826
+jhipster安装与使用
+
+安装Yarn（配置淘宝镜像：yarn config set registry https://registry.npm.taobao.org）
+
+如果要使用JHipster商城，需要安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
+
+安装JDK8
+安装Node.js
+安装Yarn
+安装Bower: yarn global add bower
+安装gulp: yarn global add gulp-cli
+如果需要使用JHipster商城，安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
+
+JHipster中文文档（一）
+
+安装JHipster
+安装方式
+Jhipster提供了6中方式以便使用JHipster,主要有：
+
+在线安装
+使用Yarn进行本地安装
+使用NPM进行本地安装
+使用包管理器安装，仅支持Max OS X和Windows
+基于ubuntu development box安装
+基于docker的轻量级容器安装
+官方推荐选择第二种安装方式，即：使用Yarn进行本地安装。
+
+安装JDK8
+安装Node.js
+安装Yarn（配置淘宝镜像：yarn config set registry https://registry.npm.taobao.org）
+如果要使用JHipster商城，需要安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
+
+当使用AngularJS 1.x时的快速配置
+安装JDK8
+安装Node.js
+安装Yarn
+安装Bower: yarn global add bower
+安装gulp: yarn global add gulp-cli
+如果需要使用JHipster商城，安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
+
+https://npm.taobao.org/====================https://npm.taobao.org/
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+cnpm install [name]
+
+第一个选择很重要，项目类型要选择 microservice application
+
+
+jhipster使用简明教程
+https://blog.csdn.net/bigtree_3721/article/details/82661834
+===================重要！！！
