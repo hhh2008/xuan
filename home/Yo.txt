@@ -1,0 +1,7 @@
+Yeoman 官网教学案例：使用 Yeoman 构建 WebApp
+
+本文是对 Yeoman 官网教学案例的翻译。
+
+https://www.cnblogs.com/nzbin/p/5751323.html
+
+Very Good!!
