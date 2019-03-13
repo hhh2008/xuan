@@ -5,3 +5,5 @@ Yeoman 官网教学案例：使用 Yeoman 构建 WebApp
 https://www.cnblogs.com/nzbin/p/5751323.html
 
 Very Good!!
+git --version
+https://www.cnblogs.com/nzbin/p/5751323.html
