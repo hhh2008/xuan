@@ -1,71 +1,179 @@
-D:\workspaces-itcast\template\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\work\Catalina\localhost\hrmapp\org\apache\jsp\WEB_002dINF\jsp\employee\employee_jsp.class
+﻿D:\workspaces-itcast\template\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\work\Catalina\localhost\hrmapp\org\apache\jsp\WEB_002dINF\jsp\employee\employee_jsp.class
 
-�������ģʽ�Ҿ��ò���ѧ̫�࣬����������ģʽ��ѧϰSpring�ز����ٵģ�factoryģʽ�������򵥹����ͳ��󹤳����� Strategyģʽ��Template methodģʽ�������������Щ��͸���û������Spring�ľ��裬ֻ����������«���հᣬ���Ǻܿ��µ��¡�
+关于设计模式我觉得不用学太多，但以下三个模式是学习Spring必不可少的：factory模式（包括简单工厂和抽象工厂）， Strategy模式，Template method模式。如果不掌握这些你就根本没法领悟Spring的精髓，只能依样画葫芦地照搬，这是很可怕的事。
 
 http://www.cnblogs.com/wuya/p/jhipster-microservice-spring-cloud-demo.html
-���
-jhipster����˵��һ������nodejs+yeoman��java������������������˵�ǻ���java��һ��΢��������������ע����һ���׵�΢������������jhipster����������ܹ��϶����������ϣ�����ǰ��mvvm��ܣ�angularjs����ǰ�˹������ߣ�gulp������˵�΢�����ܣ�spring cloud����hibernate/mongodb���ٵ���Ԫ����/ui���ԡ�
-����������˵ ��ѧ�������׿�ܣ�����ǳ��򿪷�/����ܹ���ĳ��С���,hipster����˼���ǣ�׷��������ˡ�
+简介
+jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。
+毫不客气的说 ：学会了这套框架，你就是程序开发/程序架构界的潮男。对,hipster的意思就是：追求新奇的人。
 
-��װthe Node.js website (�Ƽ�Long Time Support�汾).��Ҳ�ᰲװNPM,NODE�İ���������,�����ڽ�������������ʹ��.
-��װ Yeoman: npm install -g yo
-��װ Bower: npm install -g bower
-��װ Gulp: npm install -g gulp
-��װ JHipster: npm install -g generator-jhipster   ���˰�װ�����У����ܳ���һЩ�쳣��npm install -g npm��
+安装the Node.js website (推荐Long Time Support版本).这也会安装NPM,NODE的包管理工具,将会在接下来的命令中使用.
+安装 Yeoman: npm install -g yo
+安装 Bower: npm install -g bower
+安装 Gulp: npm install -g gulp
+安装 JHipster: npm install -g generator-jhipster   （此安装过程中，可能出现一些异常。npm install -g npm）
 
 https://blog.csdn.net/yuxiangjie12/article/details/54341826
-jhipster��װ��ʹ��
+jhipster安装与使用
 
-��װYarn�������Ա�����yarn config set registry https://registry.npm.taobao.org��
+安装Yarn（配置淘宝镜像：yarn config set registry https://registry.npm.taobao.org）
 
-���Ҫʹ��JHipster�̳ǣ���Ҫ��װYeoman:yarn global add yo
-��װJHipster:yarn global add generator-jhipster
+如果要使用JHipster商城，需要安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
 
-��װJDK8
-��װNode.js
-��װYarn
-��װBower: yarn global add bower
-��װgulp: yarn global add gulp-cli
-�����Ҫʹ��JHipster�̳ǣ���װYeoman:yarn global add yo
-��װJHipster:yarn global add generator-jhipster
+安装JDK8
+安装Node.js
+安装Yarn
+安装Bower: yarn global add bower
+安装gulp: yarn global add gulp-cli
+如果需要使用JHipster商城，安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
 
-JHipster�����ĵ���һ��
+JHipster中文文档（一）
 
-��װJHipster
-��װ��ʽ
-Jhipster�ṩ��6�з�ʽ�Ա�ʹ��JHipster,��Ҫ�У�
+安装JHipster
+安装方式
+Jhipster提供了6中方式以便使用JHipster,主要有：
 
-���߰�װ
-ʹ��Yarn���б��ذ�װ
-ʹ��NPM���б��ذ�װ
-ʹ�ð���������װ����֧��Max OS X��Windows
-����ubuntu development box��װ
-����docker��������������װ
-�ٷ��Ƽ�ѡ��ڶ��ְ�װ��ʽ������ʹ��Yarn���б��ذ�װ��
+在线安装
+使用Yarn进行本地安装
+使用NPM进行本地安装
+使用包管理器安装，仅支持Max OS X和Windows
+基于ubuntu development box安装
+基于docker的轻量级容器安装
+官方推荐选择第二种安装方式，即：使用Yarn进行本地安装。
 
-��װJDK8
-��װNode.js
-��װYarn�������Ա�����yarn config set registry https://registry.npm.taobao.org��
-���Ҫʹ��JHipster�̳ǣ���Ҫ��װYeoman:yarn global add yo
-��װJHipster:yarn global add generator-jhipster
+安装JDK8
+安装Node.js
+安装Yarn（配置淘宝镜像：yarn config set registry https://registry.npm.taobao.org）
+如果要使用JHipster商城，需要安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
 
-��ʹ��AngularJS 1.xʱ�Ŀ�������
-��װJDK8
-��װNode.js
-��װYarn
-��װBower: yarn global add bower
-��װgulp: yarn global add gulp-cli
-�����Ҫʹ��JHipster�̳ǣ���װYeoman:yarn global add yo
-��װJHipster:yarn global add generator-jhipster
+当使用AngularJS 1.x时的快速配置
+安装JDK8
+安装Node.js
+安装Yarn
+安装Bower: yarn global add bower
+安装gulp: yarn global add gulp-cli
+如果需要使用JHipster商城，安装Yeoman:yarn global add yo
+安装JHipster:yarn global add generator-jhipster
 
 https://npm.taobao.org/====================https://npm.taobao.org/
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 cnpm install [name]
 
-��һ��ѡ�����Ҫ����Ŀ����Ҫѡ�� microservice application
+第一个选择很重要，项目类型要选择 microservice application
 
 
-jhipsterʹ�ü����̳�
+jhipster使用简明教程
 https://blog.csdn.net/bigtree_3721/article/details/82661834
-===================��Ҫ������
+
+===================重要！！！
+
+https://nodejs.org/en/
+版本10.15.3 LTS
+当前长期支持版: 10.15.3 (包含 npm 6.4.1)
+https://nodejs.org/zh-cn/download/
+
+node -v
+npm -v
+
+Yeoman，搭建、发布自己的脚手架
+
+安装node
+          首先确定你安装了node和npm，node的版本要求在4.0以上，通过  node -v 和 npm  -v 可查看当前node、npm的版本。
+
+yo --version  //查看版本  2.0.5
+bower --version
+gulp --version
+
+
+
+Yeoman由三部分组成
+
+Yo 用于项目构建。
+Grunt 用于项目管理，任务制定。
+Bower 用于项目依赖管理。
+经过一段时间的使用，对这些东西有了一些个人总结：
+
+总体上说这些内容学习曲线略高，不太适合团队每个成员去维护，它属于前端架构师一类的人来使用去管理项目的整个结构。
+
+Yo
+用来构建项目，既可以生成整个项目目录（这部分工作应该由架构师来完成），也可以通过脚手架来生成一些模块，通过它可以减少手工创建文件的时间，这也是我认为Yeoman中唯一适合团队中成员使用的工具。
+Grunt
+不得不说它的配置文件很繁琐，相信这也是其难以使用的关键。Grunt的插件有很多，除了一些基本的插件，由于各个项目的差异性，你并不容易从中查到适合自己的插件，很有可能需要自己来写你需要的插件。
+Grunt控制的是整个app的任务，在任务分工上比较单一，模块化概念比较弱，如果想划分一些模块，让团队中的每个成员都能够控制自己模块的开发与测试比较难。这也就意味着会有一个人（或者是架构师）能够统一把握这些内容。项目模块少还好说，一旦有点规模就会难以管理。
+Grunt的任务概念确实很优秀，对于前端的测试发布提供了很好的支持，但是我也认为Grunt的使用难度确实不小，尤其是如何合理的构建任务队列。
+Bower
+这个工具在项目中所起的作用我认为可以忽略，因为JS库的管理是很细节很固定的，而且一旦使用很少去变动版本。这个工具并不会给团队工作带来多少帮助。
+
+
+什么是Yeoman
+　　Yeoman帮助我们创建项目，提供更好的工具来使我们的项目更多样化。
+
+　　Yeoman提供generator系统，一个generator是一个插件，在我们在一个完整的项目上使用‘yo’命令时，会运行该generator。通过这些官方的Generators，推出了Yeoman工作流，工作流是一个健壮、有自己特色的客户端堆栈，包含能快速构建漂亮的网络应用的工具和框架。Yeoman提供了负责开始项目开发的一切，没有任何让人头痛的手动配置。
+
+　　采用模块化结构，Yeoman利用从几个开源社区网站学习到的成功和教训，以确保栈开发人员越来越智能的进行开发。基于良好的文档基础以及深思熟虑的项目构建过程，Yeoman提供测试和其他更多技术 ，因此开发人员可以更专注于解决方案而不用去担心其他小事。
+
+　　Yeoman主要提供了三个工具：脚手架（yo），构建工具（grunt），包管理器（bower）。这三个工具是分别独立开发的，但是需要配合使用，来实现我们更高效的工作流模式。
+
+安装git
+Yeoman自动构建项目时会用到该软件，所以我们先安装好。到Git官网上下载并安装
+
+
+安装generator
+
+　　在命令提示符中输入yo命令
+用上下键选择install a generator，我们选择安装webapp generator，输入webapp，选择webapp
+
+Spring Tool Suite(sts)
+Spring Tool Suite™ 3 Downloads
+
+==========
+Yeoman，教你快速打造自己的脚手架
+
+It教程网 下载电子书
+http://www.itjiaocheng.com/coin/list.php?tid=3&TotalResult=219&PageNo=2&mbcx=Python
+
+
+=====
+
+IDE导入jhipster项目并运行
+
+Spring Tool Suite(sts)
+在官网下载sts。
+按照如下步骤导入导入之前创建的testjhipster项目： import->Maven->Existing Maven Projects，然后 ->next，->browse，选中项目导入，finish
+在安装好的mysql中新建一个数据库。数据库名为：testjhipster(只要和项目中的src/main/resources/config/application-dev.yml文件中配置的一致即可)
+运行。选中项目，右击鼠标，Run As->Spring Boot App
+即可运行，
+控制台出现“JHIPSTER”的图样，并给出链接：http:localhost:8080,表明成功运行。
+到浏览器中访问这个链接即可。
+
+
+
+Ecplise
+
+
+下载eclipse。
+按照如下步骤导入导入之前创建的testjhipster项目： import->Maven->Existing Maven Projects，然后 ->next，->browse，选中项目导入，finish。
+配置tomcat服务器，需要8.0以上。
+同样，在安装好的mysql中新建一个数据库。数据库名为：testjhipster(只要和项目中的src/main/resources/config/application-dev.yml文件中配置的一致即可)。
+
+
+运行。选中项目，右击鼠标，Run As->Run on Server,选中配置好的tomcat，->next,->finish启动后，在浏览器中访问http://localhost:8080/testjhipster/,注意:不要少了最后面的斜杠。
+
+
+
+注意：默认的登录名和密码都是admin。
+--------------------- 
+作者：东方一号蓝 
+来源：CSDN 
+原文：https://blog.csdn.net/dongfangyihaolan/article/details/51415973 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+记一个万金油开源框架JHipster
+
+SSM框架----使用Generator自动生成代码
+

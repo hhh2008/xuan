@@ -1,0 +1,33 @@
+eclipse 4.5.2 修改 project explorer 窗口的字体显示样式（字体大小，粗体，背景色）
+引子
+之前一直自己在pc上面搞工作以及写java code，没有感觉到project explorer窗口的字体显示样式对自己的工作有什么影响，最近因为工作需要，办公电脑换成了lenovo 小黑，屏幕变小了很多，也因为要连接投影仪，字体投出来后给大家看的时候，就特别的看不清了！
+
+环境
+--------------------- 
+作者：chenssss2008 
+来源：CSDN 
+原文：https://blog.csdn.net/chenssss2008/article/details/52492722 
+
+
+解决方法
+经过搜索发现方法还是有的，只是实践出来了：
+
+找到eclipse的安装目录
+安装目录下的 plugins目录
+org.eclipse.ui.themes_1.1.1.v20151026-1355
+css\e4_default_win7.css
+打开文件添加内容
+
+在文件末尾添加如下内容，例如：
+CTabFolder Tree{
+font-size: 18px; 
+font-weight:bold;
+background-color: rgb(204,238,205); 
+}
+
+or
+CTabFolder Tree{
+font-size: 14px; 
+/*font-weight:bold;
+background-color: rgb(204,238,205); */
+}
